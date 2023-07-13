@@ -1,8 +1,12 @@
 
-document.querySelector('.btn').addEventListener('click', onClick)
+let header = document.querySelector('h2')
+let body = document.querySelector('.body')
+let wrapper = document.querySelector('.wrapper')
+let btn = document.querySelector('btn')
+
+document.querySelector('.btn').addEventListener('mousemove', onClick)
 
 function onClick(e){
     e.preventDefault()
-    let msg = 'button is clicked';
-    console.log(msg)
+    header.textContent = `x: ${e.offsetX} y: ${e.offsetY}`
 }
