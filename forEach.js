@@ -1,4 +1,19 @@
-const users = [
+// const petNames = [
+//     "Freya",
+//     "Archer",
+//     "Rick"
+// ];
+
+// const newElem = document.getElementById("ul");
+
+// petNames.forEach(i => {
+//     console.log("foreach")
+//     const names = document.createElement("li");
+//     names.textContent = i;
+//     newElem.appendChild(names);
+// });
+
+const fakeData = [
     {
         "id": 7,
         "email": "michael.lawson@reqres.in",
@@ -41,33 +56,14 @@ const users = [
         "last_name": "Howell",
         "avatar": "https://reqres.in/img/faces/12-image.jpg"
     }
-    
 ]
 
-document.querySelector(".btn-primary").addEventListener('click', nextUser)
 
-function makeUserIterator(users) {
-    let nextIndex = 0;
-    const userIterator = {
-        next: function () {
-            let result;
-            result = nextIndex < users.length ? { value: users[nextIndex++], done: false } : { done: true }
-            return result;
-        }
-    }
-    return userIterator
-}
-const userIterator = makeUserIterator(users)
-nextUser();
-function nextUser() {
-    const user = userIterator.next().value
-    console.log(user)
-    if (user !== undefined) {
-        document.querySelector('.card-title').innerText = `${user.first_name} ${user.last_name}`;
-        document.querySelector('.card-text').innerText = `email: ${user.email}`;
-        document.querySelector('.card-img-top').src = user.avatar;
-    } else {
-        window.location.reload()
-    }
-}
+const ulll = document.getElementById('ulll')
 
+fakeData.forEach(i => {
+    const liii = document.createElement('li');
+    liii.textContent =  `${i.first_name} ${i.last_name}`;
+    console.log('working');
+    ulll.appendChild(liii);
+});
