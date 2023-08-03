@@ -32,7 +32,6 @@ function renderList(doc) {
     })
     editBtn.addEventListener('click', e =>{ 
         updateId = e.target.parentElement.parentElement.parentElement.getAttribute('data-id');
-        console.log('updateId', updateId)
     })
 
     todoList.append(li);
@@ -60,12 +59,14 @@ db.collection('todos').orderBy('title').onSnapshot(snapshot => {
     changes.forEach(change => {
         if (change.type == 'added') {
             renderList(change.doc)
-            console.log(change.doc.data())
+            // console.log(change.doc.data())
         } else if (change.type == 'removed') {
             let li = todoList.querySelector(`[data-id=${change.doc.id}]`)
             todoList.removeChild(li)
         } else if (change.type == 'modified') {
-            console.log('modified')
+            let li = todoList.querySelector(`[data-id=${change.doc.id}]`)
+            li.getElementsByTagName('span')[0].textContent = newTitle;
+            newTitle = '';
         }
     });
 })
