@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">To Do</a>
+          
+        </div>
+      </nav>
+      <div class="container">
+
+        <form id="add-todo-form">
+            <input type="text" name="title" placeholder="Add Task">
+            <a class="waves-effect btn red lighten-2">Add Task</a>
+        </form>
+
+
+        <ul class="collection ">
+            <li class="collection-item">
+                <div><span>Buy Food</span>
+                  <a href="#!" class="secondary-content"><i class="material-icons red-text">delete</i></a>
+                   <a href="#modal1" class="modal-trigger secondary-content"><i class="material-icons red-text">edit</i></a>
+              </div>
+             </li>
+
+            <li class="collection-item">
+                <div>Alvin<a href="#!" class="secondary-content"><i class="material-icons red-text">delete</i></a>
+                  <a href="#modal1" class="modal-trigger secondary-content"><i class="material-icons red-text">edit</i></a>
+                </div>
+            </li>
+
+            <li class="collection-item">
+                <div>Alvin<a href="#!" class="secondary-content"><i class="material-icons red-text">delete</i></a>
+                    <a href="#modal1" class="modal-trigger secondary-content"><i class="material-icons red-text">edit</i></a>
+                  </div>
+              </li>
+
+            <li class="collection-item">
+                <div>Alvin<a href="#!" class="secondary-content"><i class="material-icons red-text">delete</i></a>
+                    <a href="#modal1" class="modal-trigger secondary-content"><i class="material-icons red-text">edit</i></a>
+                  </div>
+              </li>
+  
+          </ul>
+            
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-red btn-flat">Agree</a>
+    </div>
+  </div>
+
+      </div>
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+             var elems = document.querySelectorAll('.modal');
+             var instances = M.Modal.init(elems);
+             });
+      </script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firestore-app.js"></script>
+
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    // import { initializeApp,firebase } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAcrnkDIZiID3Ex260NEsuSg3JHZXhlppw",
+      authDomain: "to-do-list-udemy.firebaseapp.com",
+      projectId: "to-do-list-udemy",
+      storageBucket: "to-do-list-udemy.appspot.com",
+      messagingSenderId: "493785455599",
+      appId: "1:493785455599:web:914605b3f401f308bb341a"
+    };
+  
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    db.collection('todos').orderBy('title').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges()
+    console.log(changes)
+})
+  </script>
+
+  <script src="todoList.js"></script>
+  
+</body>
+</html>

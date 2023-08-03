@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="todoList.css">
+  <title>JAF</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">To Do</a>
+
+    </div>
+  </nav>
+  <div class="container">
+
+    <form id="add-todo-form">
+      <input type="text" name="title" placeholder="Add Task">
+      <button class="waves-effect btn red lighten-2">Add Task</button>
+    </form>
+
+
+    <ul id="todo-list" class="collection ">
+      <!-- <li class="collection-item">
+        <div><span>Buy Food</span>
+          <a href="#!" class="secondary-content"><i class="material-icons red-text">delete</i></a>
+          <a href="#modal1" class="modal-trigger secondary-content"><i class="material-icons red-text">edit</i></a>
+        </div>
+      </li> -->
+
+    </ul>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+       <input type="text" name="newtitle" placeholder="Update task">
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="update" class="modal-close waves-effect waves-red btn-flat">Update</a>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+    });
+  </script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firestore-app.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-compat.js"></script>
+
+  <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAcrnkDIZiID3Ex260NEsuSg3JHZXhlppw",
+      authDomain: "to-do-list-udemy.firebaseapp.com",
+      projectId: "to-do-list-udemy",
+      storageBucket: "to-do-list-udemy.appspot.com",
+      messagingSenderId: "493785455599",
+      appId: "1:493785455599:web:914605b3f401f308bb341a"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+  </script>
+
+  <script src="todoList.js"></script>
+
+</body>
+
+</html>

@@ -1,17 +1,17 @@
-// const petNames = [
-//     "Freya",
-//     "Archer",
-//     "Rick"
-// ];
+const petNames = [
+    "Freya",
+    "Archer",
+    "Rick"
+];
 
-// const newElem = document.getElementById("ul");
+const newElem = document.getElementById("ul");
 
-// petNames.forEach(i => {
-//     console.log("foreach")
-//     const names = document.createElement("li");
-//     names.textContent = i;
-//     newElem.appendChild(names);
-// });
+petNames.forEach(i => {
+    console.log("foreach")
+    const names = document.createElement("li");
+    names.textContent = i;
+    newElem.appendChild(names);
+});
 
 const fakeData = [
     {
