@@ -33,6 +33,7 @@ function renderList(doc) {
     editBtn.addEventListener('click', e =>{ 
         updateId = e.target.parentElement.parentElement.parentElement.getAttribute('data-id');
     })
+    console.log('here')
 
     todoList.append(li);
 }
@@ -40,9 +41,8 @@ function renderList(doc) {
 updateBtn.addEventListener('click', e => {
     newTitle = document.getElementsByName('newtitle')[0].value;
     db.collection('todos').doc(updateId).update({
-        title: newTitle
-        
-    })
+        title: newTitle  
+    }) 
 })
 
 form.addEventListener('submit', e => {
