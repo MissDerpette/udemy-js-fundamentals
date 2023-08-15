@@ -1,0 +1,35 @@
+.nav {
+  background-color: green;
+  color: #fff;
+}
+/* design */
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+/* layout */
+
+.nav-col {
+  display: flex;
+  margin: 16px 16px;
+}
+.buttons {
+  display: flex;
+}
+.space {
+  margin: 16px;
+}
+
+.main {
+  background-color: green;
+  color: white;
+  height: 600px;  
+}
+
+.logo {
+  height: 30px;
+}
+
+h2 {
+}
