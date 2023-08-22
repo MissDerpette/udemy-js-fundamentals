@@ -200,3 +200,14 @@ a {
     color: #dbdbdb;
     margin: 30px;
 }
+
+.section {
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.p-i img {
+    width: 52px;
+    height: 22px;
+}
